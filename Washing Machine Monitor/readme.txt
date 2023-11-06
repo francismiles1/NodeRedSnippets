@@ -4,6 +4,8 @@ This is useful for those that have dumb washing machines, that either don't noti
 A flow that monitors your washing machine's current profile, and depending on the average current at the time, pulls the algorithm into specific states.
 Clearly, a power sensing switch is required, I use pre-tasmota-flashed ones (Smart Plug) from Local Bytes.
 
+These plugs can be a little noisy in the current reports they return. For that reason, I have averaged over a 5 minute period, which works out perfectly (configured to report once per minute)
+
 Important Settings:
 Please check the Settings module. This contains some important settings you will need to configure
 * var standbyCurrent = {"LowLimit": 0.04, "HighLimit": 0.085 }; This needs configuring based on your washing machine's standby current. This is trial and error (it takes a while to get the perfect numbers, to eliminate false triggering), but you will get there.
